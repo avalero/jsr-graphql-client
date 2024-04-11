@@ -1,0 +1,11 @@
+{
+  "name": "@avalero/GraphqlClient",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./mod.ts"
+  },
+  "description": "Simple Graphql Client",
+  "publish": {
+    "exclude": [".gitignore", ".vscode", ".github"]
+  }
+}
