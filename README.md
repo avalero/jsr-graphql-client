@@ -28,9 +28,7 @@ const data = await client.query(query);
 ```typescript
 import { GraphQLClient } from "@avalero/graphql-client";
 
-const client = new GraphQLClient({
-  url: "https://api.spacex.land/graphql",
-});
+const client = new GraphQLClient("https://api.spacex.land/graphql");
 
 const query = `
   query LaunchesPast($limit: Int!) {
@@ -52,10 +50,11 @@ const data = await client.query(query, {variables});
 ```typescript
 import { GraphQLClient } from "@avalero/graphql-client";
 
-const client = new GraphQLClient({
-  url: "https://api.spacex.land/graphql",
-  headers: {
-    Authorization: "Bearer YOUR TOKEN",
+const client = new GraphQLClient(
+  "https://api.spacex.land/graphql",
+  { 
+    headers: {
+      Authorization: "Bearer YOUR TOKEN",
   },
 });
 
@@ -75,8 +74,7 @@ const data = await client.query(query);
 ```typescript
 import { GraphQLClient } from "@avalero/graphql-client";
 
-const client = new GraphQLClient({
-  url: "https://api.spacex.land/graphql",
+const client = new GraphQLClient("https://api.spacex.land/graphql", {
   headers: {
     Authorization: "Bearer YOUR TOKEN",
   },

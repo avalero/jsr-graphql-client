@@ -1,5 +1,4 @@
 type ConstructorParamsType = {
-  url: string;
   headers?: Record<string, string>;
 };
 
@@ -12,7 +11,7 @@ type ConstructorParamsType = {
  * @param {Record<string, string>} headers - The headers to send with the request.
  * @method query - Sends a query to the GraphQL server.
  * @example ```typescript
- * const client = new GraphQLClient({ url: "https://api.example.com/graphql" });
+ * const client = new GraphQLClient("https://api.example.com/graphql");
  * const data = await client.query<{ user: { name: string } }, { id: string }>(
  *  `query GetUser($id: ID!) {
  *   user(id: $id) {
@@ -31,8 +30,8 @@ type ConstructorParamsType = {
 export class GraphQLClient {
   private _url: string;
   private _headers: Record<string, string> = {};
-  constructor(params: ConstructorParamsType) {
-    this._url = params.url;
+  constructor(url: string, params: ConstructorParamsType = {}) {
+    this._url = url;
     this._headers = params.headers || {};
   }
 
