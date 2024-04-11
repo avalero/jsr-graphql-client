@@ -1,5 +1,5 @@
 {
-  "name": "@avalero/GraphqlClient",
+  "name": "@avalero/graphql-client",
   "version": "0.0.1",
   "exports": {
     ".": "./mod.ts"
